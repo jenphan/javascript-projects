@@ -1,0 +1,17 @@
+.container .colors {
+    display: table;
+    width: 90%;
+    margin: 50px;
+}
+
+.container .colors .color-row {
+    display: table-row;
+}
+
+.container .colors .color-cell {
+    display: table-cell;
+    width: 20%;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: lightpink;
+}
