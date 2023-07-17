@@ -1,5 +1,3 @@
-const colors = ["pink", "blue", "yellow"];
-const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 
 const btn = document.getElementById('btn');
 
@@ -11,26 +9,35 @@ btn.addEventListener("click", function() {
     let num = 1;
 
     for (let i = 1; i < 6; i++) {
-        let hexColor = generateColor();
+        let color = generateColor();
         let current = "color" + num;
 
-        document.getElementById(current).style.backgroundColor = hexColor;
-        document.getElementById(current).textContent = hexColor;
+        document.getElementById(current).style.backgroundColor = color;
+        document.getElementById(current).textContent = color;
         document.getElementById(current).style.fontSize = "x-large";
-
+        
         num++;
     }
 })
 
 function generateColor() {
-    let hexColor = "#";
-
-    for (let j = 0; j < 6; j++) {
-        hexColor += hex[getRandomNumber()];
+    let color = "rgb("
+    for (let i = 0; i < 3; i++) {
+        color += getRandomNumber();
+        if (i != 2) {
+            color += ",";
+        }
     }
-    return hexColor;
+    color += ")"
+    return color;
 }
 
-function getRandomNumber() {
-    return Math.floor(Math.random() * hex.length);
+function getRandomNumber(min = 150, max = 255) {
+    let diff, rand;
+    diff = max - min;
+    rand = Math.floor(Math.random() * diff);
+    rand = rand + min;
+
+    return rand;
+
 }
