@@ -1,30 +1,33 @@
 
-const btn = document.getElementById('gen-btn');
+const genbtn = document.getElementById('gen-btn');
+const delbtn = document.getElementById('del-btn');
+
+let table = document.createElement("TABLE");
+table.setAttribute("id", "hexCodes");
+document.body.appendChild(table);
 
 window.onload = function () {
-    btn.click();
+    genbtn.click();
 };
 
-btn.addEventListener("click", function() {
-    let table = document.getElementById("hexCodes");
+genbtn.addEventListener("click", function() {
     let num = 1;
-    let row = table.insertRow(0);
+    var row = table.insertRow(0);
 
     for (let i = 1; i < 6; i++) {
         let color = generateColor();
-        let current = "color" + num;
         let newCell = row.insertCell(num - 1);
 
         newCell.style.backgroundColor = color;
         newCell.textContent = color;
         newCell.style.fontSize = "x-large";
-
-        document.getElementById(current).style.backgroundColor = color;
-        document.getElementById(current).textContent = color;
-        document.getElementById(current).style.fontSize = "x-large";
         
         num++;
     }
+})
+
+delbtn.addEventListener("click", function() {
+    document.getElementById("hexCodes").deleteRow(0);
 })
 
 function generateColor() {
