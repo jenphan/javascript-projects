@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:wght@700&family=Pangolin&family=Short+Stack&display=swap');
+
 .container .colors {
     display: table;
     width: 90%;
@@ -14,4 +16,42 @@
     padding: 10px;
     border: 1px solid black;
     background-color: lightpink;
+}
+
+body {
+    text-align: center;
+    font-family: 'Pangolin', cursive;
+}
+
+h1 {
+    font-size: 100px;
+}
+
+.container .bttn {
+    width: 15%;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-family: 'Pangolin', cursive;
+    font-size: 25px;
+    transition-duration: 0.1s;
+    margin: 0px 20px;
+}
+
+.container #gen-btn {
+    border: 2px solid pink;
+    background-color: white;
+}
+
+.container #gen-btn:hover {
+    background-color: pink;
+    color: white;
+}
+
+.container #del-btn {
+    border: 2px solid gray;
+    opacity: 1;
+}
+
+.container #del-btn:hover {
+    opacity: 0.6;
 }
